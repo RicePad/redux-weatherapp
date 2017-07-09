@@ -1,34 +1,43 @@
 import React from 'react';
 
 
+// Normal functional component
+// const SearchBar = () => {
+//     return <input />;
+    
+// };
 
-class SearchBar extends React.Component{
+
+ 
+
+
+class SearchBar extends React.Component {
     constructor(props){
         super(props);
         
-        this.state = {term: ''};
-        
+        this.state = { term: ''};
+   
+    }
+     
+    
+    render() {
+        return <div className="search-bar">
+                <input
+                value={this.state.term}
+                onChange={(event) => this.onInputChange(event.target.value)} /> 
+               </div>;
+        //   return   <input onChange={(event) => this.setState({ term: event.target.value })} /> value of input: {this.state.term}
+        // Original version:  <input onChange={this.onInputChange} /> value of the Input: {this.state.term} 
+
     }
     
-    render(){
-        return <div>
-                  <input onChange={(event) => this.setState({term: event.target.value})}  /> Show Input Value: {this.state.term}
-               </div>;
-}
-
-onInputChange(event){
-    console.log(event.target.value);
+  
+     onInputChange(term){
+        this.setState({term});
+        this.props.onSearchTermChange(term);
+    }
     
 }
-    
-}
-
 
 
 export default SearchBar;
-
-
-
-
-
-
