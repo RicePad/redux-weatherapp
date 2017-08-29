@@ -1,6 +1,6 @@
 import { BOOK_SELECTED } from '../constants';
 
-// let activeBook = null;
+ let activeBook = null;
 
 export default function(state = null, action){
     switch(action.type){
@@ -13,3 +13,4 @@ export default function(state = null, action){
     return state;
     
 }
+

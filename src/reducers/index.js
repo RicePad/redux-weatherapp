@@ -1,13 +1,21 @@
-import { combineReducers } from 'redux';
-import bookList from './books_reducer';
-import ActiveBook from './active_book_reducer';
 
+
+// import {combineReducers} from 'redux';
+// import BooksReducer from './books_reducer';
+// import ActiveBookReducer from './active_book_reducer';
+
+// export default combineReducers({
+//     books: BooksReducer, 
+//     activeBook: ActiveBookReducer
+    
+// });
+
+import {combineReducers} from 'redux';
+import books from './books_reducer';
+import activeBook from './active_book_reducer';
 
 export default combineReducers({
-    bookList,
-    activeBook: ActiveBook
-    
-    
+    books, 
+    activeBook
     
 });
-
