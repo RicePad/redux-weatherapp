@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BookList from './BookList';
+import BookDetail from './BookDetail'
 
 
 class App extends Component {
@@ -9,8 +10,9 @@ class App extends Component {
             <div>
              <h2>Inside of App Component</h2>
              <BookList />
+             <BookDetail />
             </div>
-            )
+            );
         
     }
     

@@ -1,8 +1,8 @@
  const bookList =  function() {
     return [
-        { title:'Title of the book 1' },
-        { title:'Title of the book 2' },
-        { title:'Title of the book 3' },
+        { title:'Javascript the Good Parts' },
+        { title:'Harry Potter' },
+        { title:'The Dark Tower' },
         { title:'Title of the book 4' },
         { title:'Title of the book 5' }
         

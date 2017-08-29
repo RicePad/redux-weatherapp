@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
-import { connect} from 'react-redux'
+import { connect } from 'react-redux'
+import { selectBook } from '../actions'
+
 
 
 class BookList extends Component {
     
     renderList(){
+        console.log('this.props.book', this.props.books);
         return this.props.books.map((book) => {
             return(
-                 <li key={book.title} className="list-group-item">{ book.title}</li>
+                 <li 
+                 key={book.title} 
+                 className="list-group-item"
+                 onClick={() => selectBook(book)}
+                 >{ book.title}</li>
                 );
             
         });
@@ -16,9 +23,13 @@ class BookList extends Component {
     
     render(){
         return(
+            <div>
             <ul className="list-group col-sm-4">
                 { this.renderList() }
             </ul>
+            </div>
+            
+            
             
             );
         
@@ -29,8 +40,13 @@ class BookList extends Component {
 
 
 function mapStateToProps(state){
-return     
+return  {
+    books: state.bookList,
+  
+    
+};
+
     
 }
 
-export default connect(mapStateToProps)(BookList);
+export default connect(mapStateToProps, { selectBook })(BookList);
