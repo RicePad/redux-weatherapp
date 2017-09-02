@@ -42,7 +42,6 @@ class SearchBar extends Component {
             <form
             onSubmit={this.onSubmitForm}        
             className="input-group">
-                <h2>Search Bar</h2>
                 <input
                     // onChange={(event) => {term: event.target.value}}
                     onChange = {this.onInputChange}
